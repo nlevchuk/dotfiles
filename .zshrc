@@ -1,41 +1,38 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/nikita/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mytheme"
+ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+plugins=(git bundler rails zsh-syntax-highlighting)
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-prompt bundler rails zsh-syntax-highlighting zeus)
+# User configuration
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-[[ -s "/Users/leni/.rvm/scripts/rvm" ]] && source "/Users/leni/.rvm/scripts/rvm"
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# You may need to manually set your language environment
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
-export EDITOR=mvim
+alias scheme="/Applications/MIT:GNU\ Scheme.app/Contents/Resources/mit-scheme"
+alias vhalt="vagrant halt"
+alias vup="vagrant up"
+alias vdest="vagrant destroy"
+alias vst="vagrant status"
+alias vprov="vagrant provision"
+alias vsh="vagrant ssh"
+alias sequelize="npx sequelize"
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+export EDITOR=vim
+
+eval "$(rbenv init -)"
+export NODE_ENV=development
+
+# For elastic app search
+export ALLOW_ES_SETTINGS_MODIFICATION=true
